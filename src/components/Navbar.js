@@ -5,13 +5,16 @@ import closeImg from "../starter-code/assets/shared/icon-close.svg";
 import logo from "../starter-code/assets/shared/logo.svg";
 const Navbar = () => {
     let ul ="";
+    let navbar = "";
     useEffect(() => {
         ul = document.querySelector(".navlist");
+        navbar = document.querySelector('.navbar')
     },[])//JS runs much earlier than HTML therefore querySelector would return null if not read after loading JSX, which could be done with useEffect Hook
     
   
   const handleOpen = () => {
     // ul.style.display = "block";
+    navbar.style.height = "100vh";
     if(ul.classList.contains('remove')){
         ul.classList.remove('remove')
     }
@@ -24,6 +27,9 @@ const Navbar = () => {
         ul.classList.remove('animate')
     }
     ul.classList.add('remove');
+    setTimeout(() => {
+      navbar.style.height = "10vh";
+    }, 1000);
   };
 
   return (
@@ -40,16 +46,16 @@ const Navbar = () => {
             <img src={closeImg} alt="" />
           </button>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">00 Home</Link>
           </li>
           <li>
-            <Link to="/destination">Destination</Link>
+            <Link to="/destination">01 Destination</Link>
           </li>
           <li>
-            <Link to="/crew">Crew</Link>
+            <Link to="/crew">02 Crew</Link>
           </li>
           <li>
-            <Link to="/technology">Technology</Link>
+            <Link to="/technology">03 Technology</Link>
           </li>
         </ul>
       </div>

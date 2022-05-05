@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Barlow Condensed'
+  font-family: "Barlow Condensed";
 }
 
-.App{
+.App {
   overflow-x: hidden;
+  background: rgb(4, 4, 24);
 }
 
-.brand{
+.brand {
   margin-left: 20px;
   position: absolute;
   top: 12px;
@@ -25,6 +28,7 @@
   top: 0;
   left: 0;
   z-index: 2;
+
   width: 100%;
   height: 10vh;
   display: flex;
@@ -48,7 +52,8 @@
   right: 0vw;
   top: 0px;
   width: 55vw;
-  height: 100v
+  height: 100vh;
+  backdrop-filter: blur(30px);
 }
 
 .navbar ul li {
@@ -91,7 +96,7 @@
 }
 
 .Home {
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   background: url("./starter-code/assets/home/background-home-mobile.jpg");
   background-size: cover;
@@ -108,7 +113,7 @@
   text-align: center;
 }
 
-.Home .container{
+.Home .container {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -124,27 +129,27 @@
   width: 85%;
   justify-content: space-around;
   align-items: center;
-  color:#d2d8f9;
+  color: #d2d8f9;
 }
 
-.text h1{
-  font-family: 'Barlow Condensed';
+.text h1 {
+  font-family: "Barlow Condensed";
   font-size: 25px;
   font-weight: 100;
 }
-.text h1 span{
+.text h1 span {
   display: block;
   font-size: 90px;
-  font-family: 'Bellefair';
+  font-family: "Bellefair";
   color: white;
   letter-spacing: 7px;
 }
 
-.text p{
+.text p {
   font-size: 18px;
 }
 
-.Home .explore{
+.Home .explore {
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -154,13 +159,13 @@
   cursor: pointer;
 }
 
-.explore a{
+.explore a {
   color: black;
   text-decoration: none;
 }
 
 .Destination {
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   background: url("./starter-code/assets/destination/background-destination-mobile.jpg");
   background-size: cover;
@@ -169,6 +174,125 @@
   left: 0;
   z-index: 1;
   color: white;
+}
+
+.Destination .container {
+  position: absolute;
+  bottom: 0;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Destination .container .heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  width: 70%;
+}
+
+.Destination .heading h1 {
+  font-size: 20px;
+  color: #474952;
+  font-weight: 900;
+}
+
+.Destination .heading #sentence {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.Destination .control {
+  display: flex;
+  height: 100px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.Destination .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Destination .control-list {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 70vw;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.Destination img {
+  height: 30vmin;
+  width: 30vmin;
+}
+
+.Destination .control-list li {
+  display: inline;
+  list-style-type: none;
+  font-size: 20px;
+cursor: pointer;
+}
+
+.Destination .text .name {
+  color: #fff;
+  font-family: Bellefair;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 64px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Destination .text .description {
+  border-bottom: 1px solid #383b4b;
+  color: #d0d6f9;
+  font-family: Barlow;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+.Destination .details {
+  height: 25vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Destination .title {
+  color: #d0d6f9;
+  display: block;
+  font-family: Barlow Condensed;
+  font-size: 14px;
+  letter-spacing: 2.3625px;
+  text-align: center;
+  line-height: 17px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.Destination .num {
+  color: #fff;
+  font-family: Bellefair;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .Crew {
@@ -195,12 +319,12 @@
   color: white;
 }
 
-@media only screen and (max-width: 1023px) and (min-width: 768px){
-  .navbar .navlist{
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .navbar .navlist {
     width: 30vw;
   }
 
-  .Home .text h1{
+  .Home .text h1 {
     font-size: 50px;
   }
 
@@ -208,47 +332,47 @@
     font-size: 150px;
   }
 
-  .Home .text p{
-    font-size: 30px
+  .Home .text p {
+    font-size: 30px;
   }
 
-  .Home .explore{
+  .Home .explore {
     height: 250px;
     text-align: center;
     width: 250px;
   }
 
-  .explore a{
+  .explore a {
     font-size: 70px;
   }
 
-  .navbar .navlist li{
+  .navbar .navlist li {
     margin-top: 30%;
     margin-bottom: 30%;
   }
 
-  .Home{
+  .Home {
     background: url("./starter-code/assets/home/background-home-tablet.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
   }
-  .Destination{
+  .Destination {
     background: url("./starter-code/assets/destination/background-destination-tablet.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
   }
-  .Crew{
+  .Crew {
     background: url("./starter-code/assets/crew/background-crew-tablet.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
   }
-  .Technology{
+  .Technology {
     background: url("./starter-code/assets/technology/background-technology-tablet.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -257,32 +381,33 @@
   }
 }
 
-@media only screen and (min-width: 1024px){
-body{
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-}
+@media only screen and (min-width: 1024px) {
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
 
-.navbar{
-  height: 100px;
-  position: absolute;
-  left: 30%;
-  z-index: 2;
-}
+  .navbar {
+    height: 100px;
+    position: absolute;
+    left: 30%;
+    z-index: 2;
+  }
 
-.brand{
-  position: fixed;
-  top: 40px;
-  left: 0;
-  z-index: 2;
-}
+  .brand {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+  }
 
-  .navbar .navbtn, .navbar .navlist .navbtn {
+  .navbar .navbtn,
+  .navbar .navlist .navbtn {
     display: none;
   }
 
-  .navbar .navlist{
+  .navbar .navlist {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -295,11 +420,11 @@ body{
     z-index: 2;
   }
 
-  .navlist li{
+  .navlist li {
     display: inline;
   }
 
-  .Home{
+  .Home {
     background: url("./starter-code/assets/home/background-home-desktop.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -314,7 +439,7 @@ body{
     justify-content: space-between;
   }
 
-  .Home .container .text{
+  .Home .container .text {
     width: 450px;
     height: 500px;
     display: flex;
@@ -323,45 +448,45 @@ body{
     align-items: center;
   }
 
-  .Home .text h1{
+  .Home .text h1 {
     font-size: 50px;
   }
 
-  .Home .text .space{
+  .Home .text .space {
     font-size: 150px;
   }
 
-  .Home .text p{
+  .Home .text p {
     font-size: 30px;
   }
 
-  .Home .explore{
-    height: 250px;
+  .Home .explore {
+    height: 30vmin;
+    width: 30vmin;
     text-align: center;
-    width: 250px;
   }
 
-  .explore a{
-    font-size: 70px;
+  .explore a {
+    font-size: 110px;
   }
 
-  .explore:hover{
+  .explore:hover {
     animation: growth 2s linear infinite;
   }
 
-  @keyframes growth{
-    0%{
+  @keyframes growth {
+    0% {
       box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.3);
     }
-    50%{
+    50% {
       box-shadow: 0px 0px 10px 50px rgba(255, 255, 255, 0.3);
     }
-    100%{
+    100% {
       box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.3);
     }
   }
 
-  .Destination{
+  .Destination {
     background: url("./starter-code/assets/destination/background-destination-desktop.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -369,7 +494,7 @@ body{
     height: 100vh;
   }
 
-  .Crew{
+  .Crew {
     background: url("./starter-code/assets/crew/background-crew-desktop.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -377,7 +502,7 @@ body{
     height: 100vh;
   }
 
-  .Technology{
+  .Technology {
     background: url("./starter-code/assets/technology/background-technology-desktop.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;

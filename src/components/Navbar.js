@@ -11,7 +11,7 @@ const Navbar = () => {
     navbar = document.querySelector(".navbar");
   }, []); //JS runs much earlier than HTML therefore querySelector would return null if not read after loading JSX, which could be done with useEffect Hook
 
-  let location = useLocation();
+  // let location = useLocation();
 
   const handleOpen = () => {
     // ul.style.display = "block";
@@ -47,33 +47,16 @@ const Navbar = () => {
             <img src={closeImg} alt="" />
           </button>
           <li>
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-              00 Home
-            </Link>
+            <Link to="/">00 Home</Link>
           </li>
           <li>
-            <Link
-              to="/destination"
-              className={location.pathname === "/destination" ? "active" : ""}
-            >
-              01 Destination
-            </Link>
+            <Link to="/destination">01 Destination</Link>
           </li>
           <li>
-            <Link
-              to="/crew"
-              className={location.pathname === "/crew" ? "active" : ""}
-            >
-              02 Crew
-            </Link>
+            <Link to="/crew">02 Crew</Link>
           </li>
           <li>
-            <Link
-              to="/technology"
-              className={location.pathname === "/technology" ? "active" : ""}
-            >
-              03 Technology
-            </Link>
+            <Link to="/technology">03 Technology</Link>
           </li>
         </ul>
       </div>

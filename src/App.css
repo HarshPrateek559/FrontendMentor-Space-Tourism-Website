@@ -16,6 +16,12 @@
   background: rgb(4, 4, 24);
 }
 
+.active:after{
+  width: 100%;
+  height: 3px;
+  background: white;
+}
+
 .brand {
   margin-left: 20px;
   position: absolute;
@@ -197,7 +203,7 @@
   width: 65%;
 }
 
-.Destination .heading #number{
+.Destination .heading #number {
   margin-right: 15px;
 }
 
@@ -377,18 +383,18 @@
     align-items: center;
   }
 
-  .Destination .container{
+  .Destination .container {
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 70px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
 
-  .Destination .container .heading{
+  .Destination .container .heading {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -396,21 +402,22 @@
     width: 50vw;
   }
 
-  .Destination .heading #number,#sentence{
+  .Destination .heading #number,
+  #sentence {
     font-size: 25px;
   }
 
-  .Destination .control-list li{
-    font-size: 30px
-  } 
-
-  .Destination .text .name{
-    font-size: 90px;
-    padding: 15px;
-    margin: 20px
+  .Destination .control-list li {
+    font-size: 30px;
   }
 
-  .Destination .text .description{
+  .Destination .text .name {
+    font-size: 90px;
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .Destination .text .description {
     font-size: 20px;
     margin: 20px;
     padding: 20px;
@@ -418,7 +425,7 @@
     width: 78vw;
   }
 
-  .Destination .details{
+  .Destination .details {
     display: flex;
     flex-direction: row;
     height: 10vh;
@@ -427,10 +434,10 @@
     align-items: center;
   }
 
-  .Destination .details .title{
+  .Destination .details .title {
     font-size: 20px;
   }
-  .Destination .details .num{
+  .Destination .details .num {
     font-size: 35px;
   }
 
@@ -462,6 +469,36 @@
     position: absolute;
     left: 30%;
     z-index: 2;
+  }
+
+  .navbar .navlist li a{
+    position: relative;
+  }
+
+  .navbar .navlist li a:after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    border-radius: 10px;
+    position: absolute;
+    background: white;
+    left: 0;
+    bottom: -25px;
+    transition: width 0.3s ease-out;
+  }
+
+  .navbar .navlist li a:hover:after{
+    width: 100%
+  }
+  .active:after{
+    content: "";
+    height: 3px;
+    border-radius: 10px;
+    position: absolute;
+    background: white;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
   }
 
   .brand {
@@ -563,12 +600,12 @@
     height: 105vh;
   }
 
-  .Destination .container{
+  .Destination .container {
     width: 100vw;
     height: 90vh;
   }
 
-  .Destination .container .heading{
+  .Destination .container .heading {
     position: absolute;
     top: 10%;
     left: 0%;
@@ -576,11 +613,10 @@
     font-size: 35px;
   }
 
-  .Destination .info{
+  .Destination .info {
     width: 90vw;
     position: absolute;
     top: 20%;
-    left: 0;
     height: 50vh;
     display: flex;
     flex-direction: row;
@@ -588,38 +624,38 @@
     align-items: center;
   }
 
-  .Destination .control{
+  .Destination .control {
     position: absolute;
     top: -15%;
     left: 30%;
   }
 
-  .Destination .control-list{
+  .Destination .control-list {
     height: auto;
     width: 500px;
   }
 
-  .Destination .control-list li{
+  .Destination .control-list li {
     font-size: 25px;
   }
 
-  .Destination .text{
+  .Destination .text {
     height: 50%;
     width: 45%;
   }
 
-  .Destination .text .name{
+  .Destination .text .name {
     font-size: 70px;
   }
 
-  .Destination .text .description{
+  .Destination .text .description {
     font-size: 20px;
     margin: 20px;
     max-height: 50%;
     min-height: 150px;
   }
 
-  .Destination .details{
+  .Destination .details {
     position: absolute;
     width: 50vw;
     bottom: -100px;

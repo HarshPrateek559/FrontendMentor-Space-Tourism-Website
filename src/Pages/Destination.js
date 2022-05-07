@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import Titan from "../starter-code/assets/destination/image-titan.webp";
 import Moon from "../starter-code/assets/destination/image-moon.webp";
 import Mars from "../starter-code/assets/destination/image-mars.webp";
@@ -36,14 +36,18 @@ const Destination = () => {
     },
   ];
   
+  let list ="";
+  useEffect(() => {
+    list = document.querySelectorAll('.list')
+  }, []);
+  
   const [position, setPosition] = useState(0);
   const imgs = [Moon,Mars,Europa,Titan]
-
+  const [pos, setPos] = useState(Moon);
   const handleChange = (e)=>{
     setPosition(
       e.currentTarget.value
     );
-
   }
  
   return (

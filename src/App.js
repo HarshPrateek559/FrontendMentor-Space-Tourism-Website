@@ -9,15 +9,13 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route element={<Home />} exact path="/" />
-          <Route element={<Destination />} exact path="/destination" />
-          <Route element={<Crew />} exact path="/crew" />
-          <Route element={<Technology />} exact path="/technology" />
-        </Routes>
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route element={<Home />} exact path="/" />
+        <Route element={<Destination />} exact path="/destination" />
+        <Route element={<Crew />} exact path="/crew" />
+        <Route element={<Technology />} exact path="/technology" />
+      </Routes>
     </div>
   );
 }

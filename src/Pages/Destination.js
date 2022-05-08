@@ -1,8 +1,12 @@
 import React,{useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import Titan from "../starter-code/assets/destination/image-titan.webp";
 import Moon from "../starter-code/assets/destination/image-moon.webp";
 import Mars from "../starter-code/assets/destination/image-mars.webp";
 import Europa from "../starter-code/assets/destination/image-europa.webp";
+/*In React, images can only be used imported as a component and not used from the path of the image. 
+Even if it is coming from a local database, it will not render the image unless the image is a component.*/
+
 const Destination = () => {
   const destinations = [
     {
@@ -61,10 +65,10 @@ const Destination = () => {
           <img src={imgs[position]} alt="" />
           <section className="control">
             <ul className="control-list">
-              <li value='0' onClick={handleChange}>MOON</li>
-              <li value='1' onClick={handleChange}>MARS</li>
-              <li value='2' onClick={handleChange}>EUROPA</li>
-              <li value='3' onClick={handleChange}>TITAN</li>
+              <li value='0' onClick={handleChange}><Link to="#" className={position=="0"?"active":""}>MOON</Link></li>
+              <li value='1' onClick={handleChange}><Link to="#" className={position=="1"?"active":""}>MARS</Link></li>
+              <li value='2' onClick={handleChange}><Link to="#" className={position=="2"?"active":""}>EUROPA</Link></li>
+              <li value='3' onClick={handleChange}><Link to="#" className={position=="3"?"active":""}>TITAN</Link></li>
             </ul>
           </section>
           <section className="text">

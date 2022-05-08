@@ -6,7 +6,6 @@ import logo from "../starter-code/assets/shared/logo.svg";
 const Navbar = () => {
   
   let location = useLocation();
-  console.log(location)
   let ul = "";
   let navbar = "";
    //JS runs much earlier than HTML therefore querySelector would return null if not read after loading JSX, which could be done with useEffect Hook

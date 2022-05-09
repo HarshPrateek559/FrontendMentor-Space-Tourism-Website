@@ -3,7 +3,6 @@ import Ansari from "../starter-code/assets/crew/image-anousheh-ansari.webp";
 import Douglas from "../starter-code/assets/crew/image-douglas-hurley.webp";
 import Mark from "../starter-code/assets/crew/image-mark-shuttleworth.webp";
 import Victor from "../starter-code/assets/crew/image-victor-glover.webp";
-
 const Crew = () => {
   let data = [
     {
@@ -27,6 +26,7 @@ const Crew = () => {
       bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
     },
   ];
+
   const img = [Douglas, Mark, Victor, Ansari];
 
   const [position, setPosition] = useState(0);
@@ -43,13 +43,29 @@ const Crew = () => {
           <h1 className="sentence">MEET YOUR CREW</h1>
         </section>
         <section className="content">
-          <img src={img[position]} alt=""/>
+            <img src={img[position]} alt="" />
           <section className="section">
             <ul className="control">
-              <li className={`circle ${position=="0"?"opaque":""}`} value="0" onClick={handleClick} ></li>
-              <li className={`circle ${position=="1"?"opaque":""}`} value="1" onClick={handleClick} ></li>
-              <li className={`circle ${position=="2"?"opaque":""}`} value="2" onClick={handleClick} ></li>
-              <li className={`circle ${position=="3"?"opaque":""}`} value="3" onClick={handleClick} ></li>
+              <li
+                className={`circle ${position == "0" ? "opaque" : ""}`}
+                value="0"
+                onClick={handleClick}
+              ></li>
+              <li
+                className={`circle ${position == "1" ? "opaque" : ""}`}
+                value="1"
+                onClick={handleClick}
+              ></li>
+              <li
+                className={`circle ${position == "2" ? "opaque" : ""}`}
+                value="2"
+                onClick={handleClick}
+              ></li>
+              <li
+                className={`circle ${position == "3" ? "opaque" : ""}`}
+                value="3"
+                onClick={handleClick}
+              ></li>
             </ul>
             <div className="info">
               <h1 className="role">{data[position].role}</h1>

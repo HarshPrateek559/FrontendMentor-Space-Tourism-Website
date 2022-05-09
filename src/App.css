@@ -347,12 +347,14 @@
   z-index: 1;
   color: white;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .Crew .container {
   height: auto;
   margin: 0;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100vw;
   padding: 0;
   display: flex;
@@ -526,7 +528,7 @@
     align-items: center;
   }
 
-  .Destination .container .heading {
+   .container .heading {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -602,6 +604,11 @@
     width: 100vw;
     height: 100vh;
   }
+
+  .Crew img{
+    height: 400px;
+  }
+
   .Technology {
     background: url("./starter-code/assets/technology/background-technology-tablet.jpg");
     background-size: 100vw 100vh;
@@ -754,7 +761,7 @@
     height: 90vh;
   }
 
-  .Destination .container .heading {
+  .container .heading {
     position: absolute;
     top: 10%;
     left: 0%;
@@ -842,7 +849,39 @@
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+  }
+
+  .Crew .container{
+    margin-top: 180px;
+  }
+
+  .Crew .content{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Crew .container .info{
+    width: 50%;
+    height: 60%;
+  }
+
+  .control .circle:hover{
+    background: white;
+  }
+
+  .control .circle{
+    cursor: pointer;
+  }
+
+  .Crew .container img{
+    height: 500px;
+    max-width: 500px;
   }
 
   .Technology {

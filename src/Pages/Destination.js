@@ -40,14 +40,8 @@ const Destination = () => {
     },
   ];
   
-  let list ="";
-  useEffect(() => {
-    list = document.querySelectorAll('.list')
-  }, []);
-  
   const [position, setPosition] = useState(0);
   const imgs = [Moon,Mars,Europa,Titan]
-  const [pos, setPos] = useState(Moon);
   const handleChange = (e)=>{
     setPosition(
       e.currentTarget.value
@@ -58,8 +52,8 @@ const Destination = () => {
     <div className="Destination">
       <main className="container">
         <section className="heading">
-          <h1 id="number">01</h1>
-          <h1 id="sentence">PICK YOUR DESTINATION</h1>
+          <h1 className="number">01</h1>
+          <h1 className="sentence">PICK YOUR DESTINATION</h1>
         </section>
         <section className="info">
           <img src={imgs[position]} alt="" />

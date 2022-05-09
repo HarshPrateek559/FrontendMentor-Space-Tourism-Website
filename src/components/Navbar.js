@@ -4,17 +4,17 @@ import openImg from "../starter-code/assets/shared/icon-hamburger.svg";
 import closeImg from "../starter-code/assets/shared/icon-close.svg";
 import logo from "../starter-code/assets/shared/logo.svg";
 const Navbar = () => {
-  
   let location = useLocation();
   let ul = "";
   let navbar = "";
-   //JS runs much earlier than HTML therefore querySelector would return null if not read after loading JSX, which could be done with useEffect Hook
+  //JS runs much earlier than HTML therefore querySelector would return null if not read after loading JSX, which could be done with useEffect Hook
   useEffect(() => {
     ul = document.querySelector(".navlist");
     navbar = document.querySelector(".navbar");
-  }, [location]);/*The location given in this array makes the useEffect hook render ul and li each time the page changes, when not using it, the console throws error of undefined when trying to toggle navbar. 
+  }, [
+    location,
+  ]); /*The location given in this array makes the useEffect hook render ul and li each time the page changes, when not using it, the console throws error of undefined when trying to toggle navbar. 
   Without it, React would not assign the values to variables in useEffect hook after every page change.*/
-
 
   const handleOpen = () => {
     navbar.style.height = "100vh";
@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container-fluid">
-        <Link className="brand" to="/" >
+        <Link className="brand" to="/">
           <img src={logo} alt="" />
         </Link>
         <button className="navbtn" onClick={handleOpen}>
@@ -48,16 +48,33 @@ const Navbar = () => {
             <img src={closeImg} alt="" />
           </button>
           <li>
-            <Link to="/"className={location.pathname==="/"?'active':''}>00 Home</Link>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+              00 Home
+            </Link>
           </li>
           <li>
-            <Link to="/destination"className={location.pathname==="/destination"?'active':''}>01 Destination</Link>
+            <Link
+              to="/destination"
+              className={location.pathname === "/destination" ? "active" : ""}
+            >
+              01 Destination
+            </Link>
           </li>
           <li>
-            <Link to="/crew" className={location.pathname==="/crew"?'active':''}>02 Crew</Link>
+            <Link
+              to="/crew"
+              className={location.pathname === "/crew" ? "active" : ""}
+            >
+              02 Crew
+            </Link>
           </li>
           <li>
-            <Link to="/technology" className={location.pathname==="/technology"?'active':''}>03 Technology</Link>
+            <Link
+              to="/technology"
+              className={location.pathname === "/technology" ? "active" : ""}
+            >
+              03 Technology
+            </Link>
           </li>
         </ul>
       </div>

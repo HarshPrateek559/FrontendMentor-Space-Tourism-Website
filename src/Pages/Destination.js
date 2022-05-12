@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Titan from "../starter-code/assets/destination/image-titan.webp";
 import Moon from "../starter-code/assets/destination/image-moon.webp";
@@ -18,7 +18,6 @@ const Destination = () => {
     },
     {
       name: "Mars",
-
       description:
         "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
       distance: "225 mil. km",
@@ -39,15 +38,14 @@ const Destination = () => {
       travel: "7 years",
     },
   ];
-  
+
+  let ref = useRef();
   const [position, setPosition] = useState(0);
-  const imgs = [Moon,Mars,Europa,Titan]
-  const handleChange = (e)=>{
-    setPosition(
-      e.currentTarget.value
-    );
-  }
- 
+  const imgs = [Moon, Mars, Europa, Titan];
+  const handleChange = (e) => {
+    setPosition(e.currentTarget.value);
+  };
+
   return (
     <div className="Destination">
       <main className="container">
@@ -56,13 +54,31 @@ const Destination = () => {
           <h1 className="sentence">PICK YOUR DESTINATION</h1>
         </section>
         <section className="info">
-          <img src={imgs[position]} alt="" />
+          
+            <img src={imgs[position]} alt="" />
+          
           <section className="control">
             <ul className="control-list">
-              <li value='0' onClick={handleChange}><Link to="#" className={position=="0"?"active":""}>MOON</Link></li>
-              <li value='1' onClick={handleChange}><Link to="#" className={position=="1"?"active":""}>MARS</Link></li>
-              <li value='2' onClick={handleChange}><Link to="#" className={position=="2"?"active":""}>EUROPA</Link></li>
-              <li value='3' onClick={handleChange}><Link to="#" className={position=="3"?"active":""}>TITAN</Link></li>
+              <li value="0" onClick={handleChange}>
+                <Link to="#" className={position == "0" ? "active" : ""}>
+                  MOON
+                </Link>
+              </li>
+              <li value="1" onClick={handleChange}>
+                <Link to="#" className={position == "1" ? "active" : ""}>
+                  MARS
+                </Link>
+              </li>
+              <li value="2" onClick={handleChange}>
+                <Link to="#" className={position == "2" ? "active" : ""}>
+                  EUROPA
+                </Link>
+              </li>
+              <li value="3" onClick={handleChange}>
+                <Link to="#" className={position == "3" ? "active" : ""}>
+                  TITAN
+                </Link>
+              </li>
             </ul>
           </section>
           <section className="text">
@@ -73,18 +89,12 @@ const Destination = () => {
           </section>
           <section className="details">
             <div className="distance">
-              <p className="title">
-                AVG. DISTANCE
-              </p>
+              <p className="title">AVG. DISTANCE</p>
               <div className="num">{destinations[position].distance}</div>
             </div>
             <div className="time">
-              <p className="title">
-                EST. TRAVEL TIME
-              </p>
-              <div className="num">
-              {destinations[position].travel}
-              </div>
+              <p className="title">EST. TRAVEL TIME</p>
+              <div className="num">{destinations[position].travel}</div>
             </div>
           </section>
         </section>

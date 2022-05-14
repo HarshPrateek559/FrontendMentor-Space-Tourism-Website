@@ -20,6 +20,7 @@
   margin-left: 20px;
   position: absolute;
   top: 12px;
+  left: 0;
 }
 
 .navbar {
@@ -30,6 +31,7 @@
   z-index: 2;
   width: 100%;
   height: 10vh;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -58,7 +60,10 @@
 .navbar ul li {
   list-style-type: none;
   width: 100%;
+  margin: 50px;
+  margin-left: 20px;
 }
+
 
 .navbar ul li a {
   color: white;
@@ -92,7 +97,6 @@
 .navbar ul li a:hover:after {
   width: 100%;
 }
-
 
 .animate {
   animation: widthUp 0.5s ease-in forwards;
@@ -246,16 +250,16 @@
   width: 100%;
 }
 
-.Destination .info img{
+.Destination .info img {
   animation: rotate 25s linear infinite;
 }
 
-@keyframes rotate{
-  from{
+@keyframes rotate {
+  from {
     transform: rotate(0deg);
   }
 
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
@@ -339,6 +343,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
+  padding: 20px;
   margin-bottom: 32px;
   padding-bottom: 32px;
   text-align: center;
@@ -403,19 +408,15 @@
 .Crew .content img {
   height: 300px;
   border-bottom: 2px solid gray;
-  animation: fade 0.5s ease-out forwards; 
 }
 
-@keyframes fade{
-0%{
-  opacity: 1;
-}
-50%{
-  opacity: 0;
-}
-100%{
-  opacity: 1;
-}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .section {
@@ -431,6 +432,7 @@
   width: 80%;
   margin: 0;
   padding: 0;
+  margin-top: 40px;
 }
 
 .Crew .content {
@@ -462,11 +464,13 @@
   width: 30px;
   border: 2px solid white;
   border-radius: 50%;
+  color: white;
   transition: 0.3s linear;
 }
 
-.opaque{
+.opaque {
   background: white;
+  color: black;
 }
 
 .role {
@@ -493,7 +497,8 @@
 }
 
 .Technology {
-  height: 100vh;
+  min-height: 100vh;
+  max-height: auto;
   width: 100vw;
   background: url("./starter-code/assets/technology/background-technology-mobile.jpg");
   background-size: cover;
@@ -502,6 +507,52 @@
   left: 0;
   z-index: 1;
   color: white;
+}
+
+.Technology .container{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Technology img{
+  height: 300px;
+}
+
+.Technology .control{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Technology .control ul{
+  height: 100px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.Technology .control li{
+  display: inline-block;
+  list-style-type: none;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Technology .content{
+  text-align: center;
+}
+
+.Technology .description{
+  margin-bottom: 20px;
+  padding: 14px;
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
@@ -566,7 +617,7 @@
     align-items: center;
   }
 
-   .container .heading {
+  .container .heading {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -597,7 +648,7 @@
   }
 
   .Destination .heading .number,
-  .sentence {
+  .Destination .heading .sentence {
     font-size: 25px;
   }
 
@@ -643,16 +694,39 @@
     height: 100vh;
   }
 
-  .Crew img{
+  .Crew img {
     height: 400px;
   }
 
+  .Crew .heading .number, .Crew .heading .sentence{
+    font-size: 30px;
+  }
+  
   .Technology {
     background: url("./starter-code/assets/technology/background-technology-tablet.jpg");
-    background-size: 100vw 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .Technology .heading .number, .Technology .heading .sentence{
+    font-size: 30px;
+  }
+
+  .Technology img{
+    height: 400px;
+  }
+
+  .circle{
+    height: 40px;
+    width: 40px;
+  }
+
+  .Technology .description{
+    max-width: 600px;
+    font-size: 23px;
   }
 }
 
@@ -666,7 +740,7 @@
   .navbar {
     height: 115px;
     position: absolute;
-    left: 30%;
+    left: 15%;
     z-index: 2;
   }
 
@@ -730,7 +804,7 @@
     color: white;
     text-decoration: none;
   }
-  
+
   .navbar ul li a:after {
     content: "";
     width: 0%;
@@ -742,12 +816,12 @@
     bottom: -5px;
     transition: width 0.3s ease-out;
   }
-  
+
   .navbar ul li .active:after {
     width: 100%;
     background-color: #fff;
   }
-  
+
   .navbar ul li a:hover:after {
     width: 100%;
   }
@@ -765,6 +839,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 90vw;
   }
 
   .Home .container .text {
@@ -834,7 +909,8 @@
     width: 550px;
   }
 
-  .container .heading .sentence, .container .heading  .number{
+  .container .heading .sentence,
+  .container .heading .number {
     font-size: 45px;
   }
 
@@ -924,37 +1000,40 @@
     height: 100vh;
   }
 
-  .Crew .container{
-    margin-top: 180px;
+  .Crew .container {
+    margin-top: 80px;
   }
 
-  .Crew .content{
+  .Crew .content {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
+
   }
 
-  .Crew .container .info{
+  .Crew .container .info {
     width: 50%;
     height: 60%;
     text-align: left;
   }
 
-  .control .circle:hover{
+  .control .circle:hover {
     background: white;
+    color: black;
   }
 
-  .control .circle{
+  .control .circle {
     cursor: pointer;
+    color: white;
   }
 
-  .Crew .container img{
+  .Crew .container img {
     height: 500px;
     max-width: 500px;
   }
 
-  .Crew .section{
+  .Crew .section {
     display: flex;
     align-items: flex-start;
     flex-direction: column-reverse;
@@ -966,6 +1045,44 @@
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Technology .content{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 200px;
+    width: 100vw;
+    max-width: 1300px;
+  }
+
+  .Technology img{
+    height: 500px;
+    position: absolute;
+    top: 30%;
+    right: 20px;
+  }
+
+  .Technology .contain{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 600px;
+  }
+
+  .Technology .text{
+    width: 600px;
+  }
+
+  .Technology .description{
+    font-size: 25px;
+  }
+  .Technology .name{
+    font-size: 45px;
   }
 }

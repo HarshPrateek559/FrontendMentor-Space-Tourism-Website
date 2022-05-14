@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Titan from "../starter-code/assets/destination/image-titan.webp";
 import Moon from "../starter-code/assets/destination/image-moon.webp";
@@ -39,7 +39,6 @@ const Destination = () => {
     },
   ];
 
-  let ref = useRef();
   const [position, setPosition] = useState(0);
   const imgs = [Moon, Mars, Europa, Titan];
   const handleChange = (e) => {
@@ -60,22 +59,22 @@ const Destination = () => {
           <section className="control">
             <ul className="control-list">
               <li value="0" onClick={handleChange}>
-                <Link to="#" className={position == "0" ? "active" : ""}>
+                <Link to="#" className={position === 0 ? "active" : ""}>
                   MOON
                 </Link>
               </li>
               <li value="1" onClick={handleChange}>
-                <Link to="#" className={position == "1" ? "active" : ""}>
+                <Link to="#" className={position === 1 ? "active" : ""}>
                   MARS
                 </Link>
               </li>
               <li value="2" onClick={handleChange}>
-                <Link to="#" className={position == "2" ? "active" : ""}>
+                <Link to="#" className={position === 2 ? "active" : ""}>
                   EUROPA
                 </Link>
               </li>
               <li value="3" onClick={handleChange}>
-                <Link to="#" className={position == "3" ? "active" : ""}>
+                <Link to="#" className={position === 3 ? "active" : ""}>
                   TITAN
                 </Link>
               </li>

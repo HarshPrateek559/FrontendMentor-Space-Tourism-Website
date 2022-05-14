@@ -34,8 +34,7 @@ const Crew = () => {
   const handleClick = (e) => {
     setPosition(e.target.value);
   };
-
-  return (
+ return (
     <div className="Crew">
       <main className="container">
         <section className="heading">
@@ -47,22 +46,22 @@ const Crew = () => {
           <section className="section">
             <ul className="control">
               <li
-                className={`circle ${position == "0" ? "opaque" : ""}`}
+                className={`circle ${position === 0 ? "opaque" : ""}`}
                 value="0"
                 onClick={handleClick}
               ></li>
               <li
-                className={`circle ${position == "1" ? "opaque" : ""}`}
+                className={`circle ${position === 1 ? "opaque" : ""}`}
                 value="1"
                 onClick={handleClick}
               ></li>
               <li
-                className={`circle ${position == "2" ? "opaque" : ""}`}
+                className={`circle ${position === 2 ? "opaque" : ""}`}
                 value="2"
                 onClick={handleClick}
               ></li>
               <li
-                className={`circle ${position == "3" ? "opaque" : ""}`}
+                className={`circle ${position === 3 ? "opaque" : ""}`}
                 value="3"
                 onClick={handleClick}
               ></li>

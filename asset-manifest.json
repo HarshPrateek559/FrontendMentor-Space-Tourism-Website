@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FrontendMentor-Space-Tourism-Website/static/css/main.78f1c54f.css",
+    "main.css": "/FrontendMentor-Space-Tourism-Website/static/css/main.b5f33c6f.css",
     "main.js": "/FrontendMentor-Space-Tourism-Website/static/js/main.ee22ea42.js",
     "static/media/background-home-desktop.jpg": "/FrontendMentor-Space-Tourism-Website/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
     "static/media/background-destination-desktop.jpg": "/FrontendMentor-Space-Tourism-Website/static/media/background-destination-desktop.468b922c69bf5499b4bc.jpg",
@@ -27,11 +27,11 @@
     "static/media/logo.svg": "/FrontendMentor-Space-Tourism-Website/static/media/logo.565f7f2c0534403f11b71994f4311210.svg",
     "static/media/icon-close.svg": "/FrontendMentor-Space-Tourism-Website/static/media/icon-close.d47fda63cbd8b3fedbbc1b2a53f64470.svg",
     "static/media/icon-hamburger.svg": "/FrontendMentor-Space-Tourism-Website/static/media/icon-hamburger.5273efa7c50e96ef3e51e7a2b54048ce.svg",
-    "main.78f1c54f.css.map": "/FrontendMentor-Space-Tourism-Website/static/css/main.78f1c54f.css.map",
+    "main.b5f33c6f.css.map": "/FrontendMentor-Space-Tourism-Website/static/css/main.b5f33c6f.css.map",
     "main.ee22ea42.js.map": "/FrontendMentor-Space-Tourism-Website/static/js/main.ee22ea42.js.map"
   },
   "entrypoints": [
-    "static/css/main.78f1c54f.css",
+    "static/css/main.b5f33c6f.css",
     "static/js/main.ee22ea42.js"
   ]
 }

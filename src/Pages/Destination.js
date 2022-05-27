@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Titan from "../starter-code/assets/destination/image-titan.webp";
 import Moon from "../starter-code/assets/destination/image-moon.webp";
@@ -40,9 +41,36 @@ const Destination = () => {
   ];
 
   const [position, setPosition] = useState(0);
+  const [pos, setPos] = useState(0);
   const imgs = [Moon, Mars, Europa, Titan];
+  const [show, setShow] = useState(true);
   const handleChange = (e) => {
-    setPosition(e.currentTarget.value);
+    setShow(false);
+    setPos(e.currentTarget.value);
+  };
+  setTimeout(() => {
+    setShow(true);
+    setPosition(pos);
+  }, 700);
+  const variantsEnter = {
+    visible: {
+      opacity: 1,
+      x: '0px'
+    },
+    hidden: {
+      opacity: 0,
+      x: '20px'
+    },
+  };
+  const variantExit = {
+    visible: {
+      opacity: 0,
+      x: '20px'
+    },
+    hidden: {
+      opacity: 1,
+      x: '0px'
+    },
   };
 
   return (
@@ -53,9 +81,17 @@ const Destination = () => {
           <h1 className="sentence">PICK YOUR DESTINATION</h1>
         </section>
         <section className="info">
-          
+          <motion.div
+            variants={show ? variantsEnter : variantExit}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.7,
+            }}
+          >
             <img src={imgs[position]} alt="" />
-          
+          </motion.div>
+
           <section className="control">
             <ul className="control-list">
               <li value="0" onClick={handleChange}>
@@ -80,13 +116,30 @@ const Destination = () => {
               </li>
             </ul>
           </section>
-          <section className="text">
+          <motion.section
+            className="text"
+            variants={show ? variantsEnter : variantExit}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.7,
+            }}
+          >
             <div className="name">{destinations[position].name}</div>
             <div className="description">
               {destinations[position].description}
             </div>
-          </section>
-          <section className="details">
+          </motion.section>
+
+          <motion.section
+            className="details"
+            variants={show ? variantsEnter : variantExit}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.7,
+            }}
+          >
             <div className="distance">
               <p className="title">AVG. DISTANCE</p>
               <div className="num">{destinations[position].distance}</div>
@@ -95,7 +148,7 @@ const Destination = () => {
               <p className="title">EST. TRAVEL TIME</p>
               <div className="num">{destinations[position].travel}</div>
             </div>
-          </section>
+          </motion.section>
         </section>
       </main>
     </div>

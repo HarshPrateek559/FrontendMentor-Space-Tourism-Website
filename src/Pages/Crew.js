@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Ansari from "../starter-code/assets/crew/image-anousheh-ansari.webp";
 import Douglas from "../starter-code/assets/crew/image-douglas-hurley.webp";
 import Mark from "../starter-code/assets/crew/image-mark-shuttleworth.webp";
@@ -30,11 +31,38 @@ const Crew = () => {
   const img = [Douglas, Mark, Victor, Ansari];
 
   const [position, setPosition] = useState(0);
-
+  const [pos, setPos] = useState(0);
+  const [show, setShow] = useState(true);
   const handleClick = (e) => {
-    setPosition(e.target.value);
+    setShow(false);
+    setPos(e.currentTarget.value);
   };
- return (
+  setTimeout(() => {
+    setShow(true);
+    setPosition(pos);
+  }, 700);
+
+  const variantsEnter = {
+    visible: {
+      opacity: 1,
+      x: "0px",
+    },
+    hidden: {
+      opacity: 0,
+      x: "20px",
+    },
+  };
+  const variantExit = {
+    visible: {
+      opacity: 0,
+      x: "20px",
+    },
+    hidden: {
+      opacity: 1,
+      x: "0px",
+    },
+  };
+  return (
     <div className="Crew">
       <main className="container">
         <section className="heading">
@@ -42,7 +70,17 @@ const Crew = () => {
           <h1 className="sentence">MEET YOUR CREW</h1>
         </section>
         <section className="content">
+          <motion.section
+            variants={show ? variantsEnter : variantExit}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.7,
+            }}
+          >
             <img src={img[position]} alt="" />
+          </motion.section>
+
           <section className="section">
             <ul className="control">
               <li
@@ -66,11 +104,19 @@ const Crew = () => {
                 onClick={handleClick}
               ></li>
             </ul>
-            <div className="info">
+            <motion.div
+              className="info"
+              variants={show ? variantsEnter : variantExit}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                duration: 0.7,
+              }}
+            >
               <h1 className="role">{data[position].role}</h1>
               <h1 className="name">{data[position].name}</h1>
               <p className="bio">{data[position].bio}</p>
-            </div>
+            </motion.div>
           </section>
         </section>
       </main>
